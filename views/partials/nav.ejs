@@ -1,0 +1,32 @@
+<div class="navbar">
+	<div class="logo">⚡ StormStore</div>
+	<div class="search-bar">
+		<input type="text" placeholder="Search Here" />
+	</div>
+	<div class="nav-icons">
+		<span class="icon">❤️</span>
+		<span class="cart-icon" onclick="toggleCart()">
+			🛒
+			<span class="cart-count">0</span>
+			<!-- Number of items in the cart -->
+		</span>
+		<span class="icon">👤</span>
+	</div>
+</div>
+
+<!-- Cart Drawer -->
+<!-- Updated Cart Drawer -->
+<div class="cart-drawer" id="cartDrawer">
+	<div class="cart-header">
+		<span>Your Cart</span>
+		<span class="close-cart" onclick="toggleCart()">✖</span>
+	</div>
+	<div class="cart-content"></div>
+	<!-- Checkout Button -->
+	<div class="cart-footer">
+		<div class="cart-total">Total: <span id="cartTotal">$0.00</span></div>
+		<form>
+			<button onclick="checkout()" type="button" class="checkout-button">Checkout</button>
+		</form>
+	</div>
+</div>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Summary</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="thank-you-container">
+    <h1>⚡ Thank You for Your Purchase! ⚡</h1>
+    <p>Your order has been placed successfully!</p>
+
+    <!-- Order Summary -->
+    <div class="order-details">
+      <h2>Order Summary</h2>
+      <ul>
+        <% orderSummary.items.forEach((item) => { %>
+          <li>
+            <strong><%= item.name %></strong> - $<%= item.price %> x <%= item.quantity %> = $<%= item.total %>
+          </li>
+        <% }); %>
+      </ul>
+      <div class="total">
+        <strong>Total:</strong> $<%= orderSummary.totalAmount %>
+      </div>
+    </div>
+
+    <!-- Customer Email -->
+    <div class="customer-email">
+      <p>A confirmation email has been sent to: <%= orderSummary.customerEmail %></p>
+    </div>
+
+    <a href="/" class="home-button">Continue Shopping</a>
+  </div>
+</body>
+</html>

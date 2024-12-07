@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Product Listing - Lightning Theme</title>
+		<style>
+			/* Body Styling */
+			body {
+				font-family: Arial, sans-serif;
+				background-color: #0f0e33; /* Midnight blue */
+				color: #ffffff;
+				margin: 0;
+			}
+
+			/* Page Title */
+			.page-title {
+				text-align: center;
+				font-size: 36px;
+				margin-bottom: 20px;
+				color: #00ffff; /* Neon cyan */
+				text-shadow: 0 0 15px rgba(0, 255, 255, 0.8);
+			}
+
+			/* Filter Buttons */
+			.filter-buttons {
+				display: flex;
+				justify-content: center;
+				gap: 10px;
+				margin-bottom: 30px;
+			}
+
+			.filter-buttons button {
+				padding: 10px 20px;
+				font-size: 14px;
+				font-weight: bold;
+				border: none;
+				border-radius: 5px;
+				background-color: #1b1b44; /* Dark blue */
+				color: #00ffff;
+				cursor: pointer;
+				transition: background-color 0.3s, transform 0.3s;
+			}
+
+			.filter-buttons button:hover {
+				background-color: #00bfff; /* Deep sky blue */
+				transform: scale(1.1);
+				box-shadow: 0 0 10px rgba(0, 255, 255, 0.7);
+			}
+
+			/* Product Grid */
+			.product-grid {
+				display: grid;
+				grid-template-columns: repeat(4, 1fr);
+				gap: 20px;
+				padding: 1% 5%;
+			}
+
+			/* Product Card */
+			.product-card {
+				background-color: #1b1b44; /* Dark blue */
+				border-radius: 10px;
+				padding: 15px;
+				box-shadow: 0 0 15px rgba(0, 255, 255, 0.5),
+					0 0 30px rgba(0, 191, 255, 0.5); /* Lightning glow */
+				overflow: hidden;
+				transition: transform 0.3s, box-shadow 0.3s;
+				position: relative;
+			}
+
+			.product-card:hover {
+				transform: scale(1.05);
+				box-shadow: 0 0 25px rgba(0, 255, 255, 0.7),
+					0 0 40px rgba(0, 191, 255, 0.7);
+			}
+
+			/* Image */
+			.product-card img {
+				width: 100%;
+				height: 200px;
+				object-fit: cover;
+				border-radius: 5px;
+				margin-bottom: 15px;
+			}
+
+			/* Title */
+			.product-card h2 {
+				font-size: 20px;
+				color: #00ffff;
+				text-shadow: 0 0 5px rgba(0, 255, 255, 0.8);
+				margin-bottom: 10px;
+			}
+
+			/* Price and Badge */
+			.product-card .price {
+				font-size: 18px;
+				font-weight: bold;
+				color: #00bfff;
+			}
+
+			.product-card .badge {
+				position: absolute;
+				top: 10px;
+				right: 10px;
+				background-color: #ffd700; /* Gold for attention */
+				color: #1b1b44; /* Dark blue for contrast */
+				font-size: 12px;
+				font-weight: bold;
+				padding: 5px 10px;
+				border-radius: 5px;
+				box-shadow: 0 0 10px rgba(255, 215, 0, 0.7);
+			}
+
+			/* Description */
+			.product-card p {
+				font-size: 14px;
+				color: #87ceeb;
+				margin: 10px 0;
+			}
+
+			/* Colors */
+			.product-card .colors span {
+				display: inline-block;
+				width: 20px;
+				height: 20px;
+				border-radius: 50%;
+				margin-right: 5px;
+				border: 2px solid #ffffff;
+			}
+
+			/* Action Buttons */
+			.product-card .actions {
+				margin-top: 15px;
+				display: flex;
+				justify-content: space-between;
+			}
+
+			.product-card .actions button {
+				flex: 1;
+				padding: 10px;
+				font-size: 14px;
+				font-weight: bold;
+				border: none;
+				border-radius: 5px;
+				margin: 0 5px;
+				cursor: pointer;
+				transition: background-color 0.3s, box-shadow 0.3s;
+			}
+
+			.add-to-cart {
+				background-color: #00bfff; /* Deep sky blue */
+				color: #1b1b44;
+			}
+
+			.add-to-cart:hover {
+				background-color: #87ceeb;
+				box-shadow: 0 0 10px rgba(0, 255, 255, 0.7);
+			}
+
+			.view-details {
+				background-color: #00ffff; /* Neon cyan */
+				color: #1b1b44;
+			}
+
+			.view-details:hover {
+				background-color: #00e5ff;
+				box-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="page-title">Explore Our Products</h1>
+
+		<!-- Filter Buttons -->
+		<div class="filter-buttons">
+			<button>All</button>
+			<button>Hats</button>
+			<button>Clothes</button>
+			<button>Swords</button>
+			<button>Toys</button>
+			<button>Comics</button>
+		</div>
+
+		<!-- Product Grid -->
+		<div class="product-grid">
+			<!-- Product Card 1 -->
+			<!-- https://via.placeholder.com/300x200.png?text=Product+Image -->
+
+			<% products.forEach(product => { %>
+			<div class="product-card">
+				<img src="<%= product.image %>" alt="Product Image" />
+				<h2><%= product.name %></h2>
+				<div class="price">$<%= product.price %></div>
+				<div class="badge">Bestseller</div>
+				<p><%= product.description %></p>
+				<div class="colors">
+					<span style="background-color: green"></span>
+					<span style="background-color: yellow"></span>
+					<span style="background-color: red"></span>
+				</div>
+				<div class="actions">
+					<button class="add-to-cart">Add to Cart</button>
+					<button class="view-details">
+						<a href="/products/<%= product.id %>">View Details</a>
+					</button>
+				</div>
+			</div>
+			<% }) %>
+
+			<!-- Product Card 2 -->
+			<!-- <div class="product-card">
+				<img
+					src="https://via.placeholder.com/300x200.png?text=Product+Image"
+					alt="Product Image"
+				/>
+				<h2>Naruto T-Shirt</h2>
+				<div class="price">$19.99</div>
+				<p>Orange-themed t-shirt inspired by Naruto Uzumaki.</p>
+				<div class="colors">
+					<span style="background-color: orange"></span>
+					<span style="background-color: black"></span>
+				</div>
+				<div class="actions">
+					<button class="add-to-cart">Add to Cart</button>
+					<button class="view-details">View Details</button>
+				</div>
+			</div> -->
+
+			<!-- Product Card 3 -->
+			<!-- <div class="product-card">
+				<img
+					src="https://via.placeholder.com/300x200.png?text=Product+Image"
+					alt="Product Image"
+				/>
+				<h2>Zoro's Bandana</h2>
+				<div class="price">$15.99</div>
+				<p>A bandana worn by Zoro from One Piece.</p>
+				<div class="colors">
+					<span style="background-color: green"></span>
+					<span style="background-color: red"></span>
+				</div>
+				<div class="actions">
+					<button class="add-to-cart">Add to Cart</button>
+					<button class="view-details">View Details</button>
+				</div>
+			</div> -->
+			<!-- Product Card 3
+			<div class="product-card">
+				<img
+					src="https://via.placeholder.com/300x200.png?text=Product+Image"
+					alt="Product Image"
+				/>
+				<h2>Zoro's Bandana</h2>
+				<div class="price">$15.99</div>
+				<p>A bandana worn by Zoro from One Piece.</p>
+				<div class="colors">
+					<span style="background-color: green"></span>
+					<span style="background-color: red"></span>
+				</div>
+				<div class="actions">
+					<button class="add-to-cart">Add to Cart</button>
+					<button class="view-details">View Details</button>
+				</div>
+			</div> -->
+		</div>
+	</body>
+</html>

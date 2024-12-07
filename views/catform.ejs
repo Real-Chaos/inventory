@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Category Form - Blue Lightning Theme</title>
+		<style>
+			/* Body Styling */
+			body {
+				font-family: Arial, sans-serif;
+				background-color: #0f0e33; /* Midnight blue */
+				color: #ffffff; /* White text for contrast */
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				height: 100vh;
+				margin: 0;
+			}
+
+			/* Form Container */
+			.form-container {
+				background-color: #1b1b44; /* Slightly lighter midnight blue */
+				padding: 20px 30px;
+				border-radius: 10px;
+				box-shadow: 0 0 20px rgba(0, 255, 255, 0.5),
+					0 0 40px rgba(0, 191, 255, 0.5); /* Blue lightning glow */
+				width: 400px;
+			}
+
+			.form-container h1 {
+				text-align: center;
+				margin-bottom: 20px;
+				color: #00ffff; /* Neon cyan for the title */
+				text-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+			}
+
+			/* Labels */
+			.form-container label {
+				display: block;
+				font-weight: bold;
+				margin-bottom: 5px;
+				color: #87ceeb; /* Light sky blue for labels */
+			}
+
+			/* Inputs and Textareas */
+			.form-container input,
+			.form-container textarea,
+			.form-container button {
+				width: 100%;
+				padding: 10px;
+				margin-bottom: 15px;
+				border: 1px solid #3d5a80; /* Dark blue border */
+				border-radius: 5px;
+				font-size: 14px;
+				background-color: #0f0e33; /* Match dark blue theme */
+				color: #ffffff; /* White text */
+				box-shadow: inset 0 0 5px rgba(0, 255, 255, 0.5); /* Subtle inner glow */
+			}
+
+			/* Focus State */
+			.form-container input:focus,
+			.form-container textarea:focus {
+				outline: none;
+				border-color: #00ffff; /* Neon cyan border */
+				box-shadow: 0 0 10px rgba(0, 255, 255, 0.8); /* Bright lightning glow */
+			}
+
+			/* Submit Button */
+			.form-container button {
+				background-color: #00bfff; /* Deep sky blue */
+				color: #1b1b44; /* Dark background for contrast */
+				border: none;
+				cursor: pointer;
+				font-size: 16px;
+				text-shadow: 0 0 5px rgba(0, 255, 255, 0.7);
+				transition: background-color 0.3s, box-shadow 0.3s;
+			}
+
+			.form-container button:hover {
+				background-color: #87ceeb; /* Lighter sky blue on hover */
+				box-shadow: 0 0 15px rgba(0, 255, 255, 0.9),
+					0 0 25px rgba(0, 191, 255, 0.8); /* Stronger glow on hover */
+			}
+		</style>
+	</head>
+	<body>
+		<div class="form-container">
+			<h1>Create a Category</h1>
+			<form action="/category/new" method="POST">
+				<!-- Category Name -->
+				<label for="name">Category Name</label>
+				<input
+					type="text"
+					id="name"
+					name="name"
+					placeholder="Enter category name"
+					required
+				/>
+
+				<!-- Description -->
+				<label for="description">Description</label>
+				<textarea
+					id="description"
+					name="description"
+					placeholder="Enter category description"
+					rows="4"
+					required
+				></textarea>
+
+				<!-- Submit Button -->
+				<button type="submit">Create Category</button>
+			</form>
+		</div>
+	</body>
+</html>

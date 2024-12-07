@@ -1,0 +1,50 @@
+<html>
+	<head>
+		<title>HOME</title>
+		<link rel="stylesheet" href="/styles.css" />
+	</head>
+	<body>
+		<%- include('partials/hero') %>
+		<div class="advertisement-container">
+			<div class="ad"><%- include('partials/ad') %></div>
+			<div class="other-content">
+				<% for (const cat in catProducts) { %>
+				<h1 class="category-name"><%= cat %></h1>
+				<% const obj = catProducts[cat] %>
+				<div class="cards">
+					<% for (const [key, value] of Object.entries(obj)) {%> <%-
+					include('partials/card', {card: value}) %> <% } %>
+				</div>
+
+				<% } %>
+			</div>
+			<div class="ad"><%- include('partials/ad2') %></div>
+		</div>
+		<script>
+			const hero = document.querySelector('.hero')
+			const img = new Image()
+			img.src =
+				'https://mir-s3-cdn-cf.behance.net/project_modules/fs/99943c128826103.61749a15cb455.png'
+
+			img.onload = function () {
+				hero.style.height = `${img.height}px` // Set the container height to the image's natural height
+			}
+
+			// Add scroll event listener to the window
+			window.addEventListener('scroll', function () {
+				const navbar = document.querySelector('.navbar') // Select your navbar
+				if (window.scrollY > 200) {
+					// Add glowy box shadow background when scrolled 200px
+					navbar.style.boxShadow = '0 4px 20px rgba(0, 255, 255, 0.5)'
+					navbar.style.background = '#0b1120' // Optional: add a semi-transparent background
+					navbar.style.transition = 'all 0.3s ease-in-out'
+				} else {
+					// Remove box shadow background when scrolled back to top
+					navbar.style.boxShadow = 'none'
+					navbar.style.background = 'transparent'
+				}
+			})
+		</script>
+		<script src="cart.js"></script>
+	</body>
+</html>

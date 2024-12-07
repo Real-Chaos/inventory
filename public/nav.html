@@ -1,0 +1,50 @@
+<div class="navbar">
+  <div class="logo">⚡ StormStore</div>
+  <div class="search-bar">
+    <input type="text" placeholder="Search Here">
+  </div>
+  <div class="nav-icons">
+    <span class="icon">❤️</span>
+    <span class="cart-icon" onclick="toggleCart()">
+      🛒
+      <span class="cart-count">0</span> <!-- Number of items in the cart -->
+    </span>
+    <span class="icon">👤</span>
+  </div>
+</div>
+
+<!-- Cart Drawer -->
+<!-- Updated Cart Drawer -->
+<div class="cart-drawer" id="cartDrawer">
+  <div class="cart-header">
+    <span>Your Cart</span>
+    <span class="close-cart" onclick="toggleCart()">✖</span>
+  </div>
+  <div class="cart-content">
+    <!-- Example Cart Item -->
+    <!-- <div class="cart-item">
+      <img src="https://via.placeholder.com/50" alt="Luffy Hat">
+      <div class="info">
+        <h3>Luffy Hat</h3>
+        <p>$45.00</p>
+      </div>
+    </div>
+    <div class="cart-item">
+      <img src="https://via.placeholder.com/50" alt="Zoro Bandana">
+      <div class="info">
+        <h3>Zoro Bandana</h3>
+        <p>$30.00</p>
+      </div>
+    </div> -->
+  </div>
+  <!-- Checkout Button -->
+  <div class="cart-footer">
+		<div class="cart-total">
+			Total: <span id="cartTotal">$0.00</span>
+		</div>
+		<button class="checkout-button">Checkout</button>
+	</div>
+	
+</div>
+
+<div class="delete-item">x</div>

@@ -1,0 +1,172 @@
+<!-- <div class="card">
+	<div class="card-img">
+		<img
+			src="https://steamuserimages-a.akamaihd.net/ugc/942838330331045142/E5E7603BE823F76846E96A831C146635129F6B44/?imw=637&imh=358&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true"
+			alt=""
+		/>
+	</div>
+	<div class="card-info">
+		<div class="card-text">
+			<h4>Luffy Hat</h4>
+			<p>
+				Buy this product...you won't regret it. Brokie. I am rich you are poor.
+				Prove to me you are rich as well
+			</p>
+		</div>
+		<div class="more-info">
+			<div class="stock">
+				<strong>Stock: </strong>
+				<p>5</p>
+			</div>
+			<div class="colors">
+				<strong>Colors</strong>
+				<div class="colors-list">
+					<div class="red"></div>
+					<div class="green"></div>
+					<div class="yellow"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div> -->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Improved Product Cards - Lightning Theme</title>
+		<style>
+			/* Body Styling */
+			body {
+				font-family: Arial, sans-serif;
+				background-color: #0f0e33;
+				color: #ffffff;
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: center;
+				align-items: center;
+				gap: 20px;
+				padding: 20px;
+				margin: 0;
+			}
+
+			/* Product Card Styling */
+			.product-card {
+				/* background-color: #1b1b44; Dark blue */
+				border-radius: 10px;
+				width: 300px;
+				padding: 15px;
+				box-shadow: 0 0 15px rgba(0, 255, 255, 0.5),
+					0 0 30px rgba(0, 191, 255, 0.5); /* Lightning glow */
+				overflow: hidden;
+				text-align: center;
+				transition: transform 0.3s, box-shadow 0.3s;
+			}
+
+			.product-card:hover {
+				transform: scale(1.05); /* Slight zoom on hover */
+				box-shadow: 0 0 25px rgba(0, 255, 255, 0.7),
+					0 0 40px rgba(0, 191, 255, 0.7); /* Stronger glow */
+			}
+
+			.product-card img {
+				width: 100%;
+				height: 200px;
+				object-fit: cover;
+				border-radius: 5px;
+				margin-bottom: 15px;
+			}
+
+			.product-card h2 {
+				font-size: 20px;
+				margin-bottom: 10px;
+				color: #00ffff; /* Neon cyan */
+				text-shadow: 0 0 5px rgba(0, 255, 255, 0.8);
+			}
+
+			.product-card p {
+				font-size: 14px;
+				margin-bottom: 10px;
+				color: #ffffff; /* White text without background */
+			}
+
+			.product-card .category {
+				font-size: 14px;
+				margin: 5px 0 10px;
+				color: #87ceeb; /* Light sky blue */
+			}
+
+			.product-card .price {
+				font-size: 18px;
+				font-weight: bold;
+				color: #00bfff; /* Deep sky blue */
+				margin-bottom: 10px;
+			}
+
+			/* Colors Section */
+			.product-card .colors {
+				margin: 10px 0;
+				text-align: center;
+			}
+
+			.product-card .colors span {
+				display: inline-block;
+				width: 20px;
+				height: 20px;
+				border-radius: 50%;
+				margin: 0 5px;
+				border: 2px solid #ffffff; /* White border for contrast */
+			}
+
+			.product-card .colors .color-green {
+				background-color: green;
+			}
+
+			.product-card .colors .color-red {
+				background-color: red;
+			}
+
+			.product-card .colors .color-orange {
+				background-color: orange;
+			}
+
+			.product-card button {
+				background-color: #00bfff; /* Deep sky blue */
+				color: #1b1b44; /* Dark background for contrast */
+				border: none;
+				padding: 10px 20px;
+				border-radius: 5px;
+				cursor: pointer;
+				font-size: 16px;
+				transition: background-color 0.3s, box-shadow 0.3s;
+			}
+
+			.product-card button:hover {
+				background-color: #87ceeb; /* Light sky blue */
+				box-shadow: 0 0 15px rgba(0, 255, 255, 0.7),
+					0 0 25px rgba(0, 191, 255, 0.7); /* Stronger glow on hover */
+			}
+		</style>
+	</head>
+	<body>
+		<!-- Product Card 1 -->
+		<div class="product-card">
+			<img src="<%= card.image %>" alt="Product Image" />
+			<a href="/products/<%= card.id %>"><h2><%= card.name %></h2></a>
+			<p>The iconic straw hat from One Piece.</p>
+			<div class="category">Category: <%= card.category %></div>
+			<div class="price">$<%= card.price %></div>
+			<button
+				class="add-to-cart"
+				data-id="<%= card.id %>"
+				data-name="<%= card.name %>"
+				data-price="<%= card.price %>"
+				data-image="<%= card.image %>"
+			>
+				Add to Cart
+			</button>
+			<!-- <button><a href="/products/<= card.id %>">Add to Cart</a></button> -->
+		</div>
+	</body>
+</html>
